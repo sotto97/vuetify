@@ -6,8 +6,19 @@
 			<v-toolbar-title>Vuetify</v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-toolbar-items>
-				<v-btn text>Button</v-btn>
-				<v-btn text>Button</v-btn>
+				<v-btn text>For Enterprise</v-btn>
+				<v-menu offset-y>
+					<template v-slot:activator="{ on }">
+						<v-btn v-on="on" text>Support</v-btn>
+					</template>
+					<v-list>
+						<v-list-item v-for="support in supports" :key="support">
+							<v-list-item-component>
+								<v-list-item-title>{{ support }}</v-list-item-title>
+							</v-list-item-component>
+						</v-list-item>
+					</v-list>
+				</v-menu>
 			</v-toolbar-items>
 		</v-app-bar>
 		<v-footer color="primary" dark app>Vuetify</v-footer>
@@ -19,6 +30,13 @@ export default {
 	data() {
 		return {
 			drawer: null,
+			supports: [
+				"Consulting and supprt",
+				"Discord community",
+				"Report a bug",
+				"Github issue board",
+				"Stack overview",
+			],
 		};
 	},
 };
