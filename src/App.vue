@@ -23,7 +23,7 @@
 								<v-list-item-title>{{ nav_list.name }}</v-list-item-title>
 							</v-list-item-content>
 						</template>
-						<v-list-item v-for="list in nav_list.lists" :key="list">
+						<v-list-item v-for="list in nav_list.lists" :key="list.name" :to="list.link">
 							<v-list-item-content>
 								<v-list-item-title>{{ list }}</v-list-item-title>
 							</v-list-item-content>
@@ -37,14 +37,14 @@
 			<v-toolbar-title>Vuetify</v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-toolbar-items>
-				<v-btn text>For Enterprise</v-btn>
+				<v-btn text to="/enterprise">For Enterprise</v-btn>
 				<v-menu offset-y>
 					<template v-slot:activator="{ on }">
 						<v-btn v-on="on" text>Support<v-icon>mdi-menu-down</v-icon></v-btn>
 					</template>
 					<v-list>
 						<v-subheader>Get help</v-subheader>
-						<v-list-item v-for="support in supports" :key="support.name">
+						<v-list-item v-for="support in supports" :key="support.name" :to="support.link">
 							<v-list-item-icon>
 								<v-icon>{{ support.icon }}</v-icon>
 							</v-list-item-icon>
@@ -69,17 +69,17 @@ export default {
 		return {
 			drawer: null,
 			supports: [
-				{ name: "Consulting and support", icon: "mdi-vuetify" },
-				{ name: "Discord community", icon: "mdi-discord" },
-				{ name: "Report a bug", icon: "mdi-bug" },
-				{ name: "Github issue board", icon: "mdi-github" },
-				{ name: "Stack overview", icon: "mdi-stack-overflow" },
+				{ name: "Consulting and support", icon: "mdi-vuetify", link: "/consulting-and-support" },
+				{ name: "Discord community", icon: "mdi-discord", link: "/discord-community" },
+				{ name: "Report a bug", icon: "mdi-bug", link: "/report-a-bug" },
+				{ name: "Github issue board", icon: "mdi-github", link: "/github-issue-board" },
+				{ name: "Stack overview", icon: "mdi-stack-overflow", link: "/stack-overflow" },
 			],
 			nav_lists: [
 				{
 					name: "Getting Started",
 					icon: "mdi-vuetify",
-					lists: ["Quick Start", "Pre^made layouts"],
+					lists: [{"Quick Start", link:'quick-start'},{ "Pre^made layouts", link:'pre-made-layouts'}],
 				},
 				{ name: "Customization", icon: "mdi-cogs" },
 				{
