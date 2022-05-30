@@ -69,7 +69,7 @@ export default {
 		return {
 			drawer: null,
 			supports: [
-				{ name: "Consulting and support", icon: "mdi-vuetify", link: "/consulting-and-support" },
+				{ name: "よくある問い合わせ", icon: "mdi-vuetify", link: "/support" },
 				{ name: "Discord community", icon: "mdi-discord", link: "/discord-community" },
 				{ name: "Report a bug", icon: "mdi-bug", link: "/report-a-bug" },
 				{ name: "Github issue board", icon: "mdi-github", link: "/github-issue-board" },
