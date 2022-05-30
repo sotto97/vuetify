@@ -79,7 +79,11 @@ export default {
 				{
 					name: "Getting Started",
 					icon: "mdi-vuetify",
-					lists: [{"Quick Start", link:'quick-start'},{ "Pre^made layouts", link:'pre-made-layouts'}],
+					// lists: [
+					// 	{ name: "Quick Start", link: "/quick-start" },
+					// 	{ name: "Pre^made layouts", link: "/pre-made-layouts" },
+					// ],
+					lists: ["Quick Start", "Pre^made layouts"],
 				},
 				{ name: "Customization", icon: "mdi-cogs" },
 				{
