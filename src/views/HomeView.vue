@@ -1,15 +1,18 @@
 <template>
-  <hello-world />
+	<SaleGraph />
+	<!-- <hello-world /> -->
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import SaleGraph from "../components/SaleGraph";
+// import HelloWorld from "../components/HelloWorld";
 
-  export default {
-    name: 'Home',
+export default {
+	name: "Home",
 
-    components: {
-      HelloWorld,
-    },
-  }
+	components: {
+		// HelloWorld,
+		SaleGraph,
+	},
+};
 </script>
