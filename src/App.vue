@@ -37,13 +37,13 @@
 			<v-toolbar-title>Vuetify</v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-toolbar-items>
-				<v-btn text to="/enterprise">For Enterprise</v-btn>
+				<v-btn text to="/enterprise">企業向け</v-btn>
 				<v-menu offset-y>
 					<template v-slot:activator="{ on }">
-						<v-btn v-on="on" text>Support<v-icon>mdi-menu-down</v-icon></v-btn>
+						<v-btn v-on="on" text>サポート<v-icon>mdi-menu-down</v-icon></v-btn>
 					</template>
 					<v-list>
-						<v-subheader>Get help</v-subheader>
+						<v-subheader>ヘルプ</v-subheader>
 						<v-list-item v-for="support in supports" :key="support.name" :to="support.link">
 							<v-list-item-icon>
 								<v-icon>{{ support.icon }}</v-icon>
@@ -70,19 +70,14 @@ export default {
 			drawer: null,
 			supports: [
 				{ name: "よくある問い合わせ", icon: "mdi-vuetify", link: "/support" },
-				{ name: "Discord community", icon: "mdi-discord", link: "/discord-community" },
-				{ name: "Report a bug", icon: "mdi-bug", link: "/report-a-bug" },
-				{ name: "Github issue board", icon: "mdi-github", link: "/github-issue-board" },
-				{ name: "Stack overview", icon: "mdi-stack-overflow", link: "/stack-overflow" },
+				{ name: "Discordコミュニティーに参加", icon: "mdi-discord", link: "/discord-community" },
+				{ name: "バグの報告", icon: "mdi-bug", link: "/report-a-bug" },
+				{ name: "Github issueに登録", icon: "mdi-github", link: "/github-issue-board" },
 			],
 			nav_lists: [
 				{
 					name: "Getting Started",
 					icon: "mdi-vuetify",
-					// lists: [
-					// 	{ name: "Quick Start", link: "/quick-start" },
-					// 	{ name: "Pre^made layouts", link: "/pre-made-layouts" },
-					// ],
 					lists: ["Quick Start", "Pre^made layouts"],
 				},
 				{ name: "Customization", icon: "mdi-cogs" },
